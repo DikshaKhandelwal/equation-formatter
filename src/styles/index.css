@@ -1,0 +1,75 @@
+:root {
+ --primary: #3b82f6;
+ --primary-dark: #2563eb;
+ --accent: #f97316;
+ --accent-light: #fdba74;
+ --text: #1e293b;
+ --text-light: #64748b;
+ --background: #f8fafc;
+ --card-bg: #ffffff;
+ --border: #e2e8f0;
+}
+
+/* Theme: Dark */
+.dark {
+ --primary: #60a5fa;
+ --primary-dark: #3b82f6;
+ --accent: #fb923c;
+ --accent-light: #fdba74;
+ --text: #f1f5f9;
+ --text-light: #cbd5e1;
+ --background: #0f172a;
+ --card-bg: #1e293b;
+ --border: #334155;
+}
+
+/* Theme: Nature */
+.nature {
+ --primary: #22c55e;
+ --primary-dark: #16a34a;
+ --accent: #facc15;
+ --accent-light: #fde68a;
+ --text: #1e293b;
+ --text-light: #64748b;
+ --background: #ecfdf5;
+ --card-bg: #ffffff;
+ --border: #d1fae5;
+}
+
+/* Theme: Sunset */
+.sunset {
+ --primary: #f97316;
+ --primary-dark: #ea580c;
+ --accent: #8b5cf6;
+ --accent-light: #c4b5fd;
+ --text: #1e293b;
+ --text-light: #64748b;
+ --background: #fff7ed;
+ --card-bg: #ffffff;
+ --border: #fed7aa;
+}
+
+* {
+ margin: 0;
+ padding: 0;
+ box-sizing: border-box;
+}
+
+body {
+ font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+ background-color: var(--background);
+ color: var(--text);
+ transition: background-color 0.3s, color 0.3s;
+ min-height: 100vh;
+}
+
+button {
+ cursor: pointer;
+ font-family: inherit;
+}
+
+.katex-display {
+ overflow-x: auto;
+ overflow-y: hidden;
+ padding: 0.5rem;
+}

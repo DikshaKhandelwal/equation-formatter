@@ -1,0 +1,318 @@
+.app {
+ min-height: 100vh;
+ display: flex;
+ flex-direction: column;
+ align-items: center;
+}
+
+.container {
+ width: 100%;
+ max-width: 1000px;
+ padding: 2rem 1rem;
+}
+
+/* Header styles */
+.app-header {
+ text-align: center;
+ margin-bottom: 2rem;
+ padding-bottom: 1rem;
+ border-bottom: 2px solid var(--accent);
+}
+
+.logo {
+ display: flex;
+ align-items: center;
+ justify-content: center;
+ gap: 0.5rem;
+ color: var(--primary);
+}
+
+.logo h1 {
+ font-size: 2.5rem;
+ font-weight: 700;
+ color: var(--primary);
+}
+
+.tagline {
+ color: var(--text-light);
+ font-size: 1.1rem;
+ margin-top: 0.5rem;
+}
+
+/* Main content */
+.content {
+ display: flex;
+ flex-direction: column;
+ gap: 2rem;
+}
+
+/* Theme selector */
+.theme-selector {
+ display: flex;
+ align-items: center;
+ gap: 1rem;
+ margin-bottom: 1rem;
+}
+
+.theme-selector p {
+ font-weight: 600;
+}
+
+.theme-options {
+ display: flex;
+ gap: 0.5rem;
+}
+
+.theme-button {
+ display: flex;
+ align-items: center;
+ gap: 0.5rem;
+ padding: 0.5rem 1rem;
+ border: 1px solid var(--border);
+ border-radius: 1.5rem;
+ background-color: var(--card-bg);
+ color: var(--text);
+ transition: background-color 0.2s, transform 0.2s;
+}
+
+.theme-button.active {
+ background-color: var(--primary);
+ color: white;
+ border-color: var(--primary);
+}
+
+/* Equation input */
+.equation-input-container {
+ background-color: var(--card-bg);
+ border-radius: 1rem;
+ padding: 1.5rem;
+ box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+ border: 1px solid var(--border);
+}
+
+.input-header {
+ display: flex;
+ justify-content: space-between;
+ align-items: center;
+ margin-bottom: 1rem;
+}
+
+.input-header h2 {
+ font-size: 1.2rem;
+ color: var(--text);
+}
+
+.hint-button {
+ display: flex;
+ align-items: center;
+ gap: 0.5rem;
+ padding: 0.5rem 1rem;
+ background-color: var(--primary);
+ color: white;
+ border: none;
+ border-radius: 0.5rem;
+ font-weight: 500;
+}
+
+.examples-container {
+ margin-bottom: 1rem;
+ padding: 1rem;
+ background-color: rgba(0, 0, 0, 0.03);
+ border-radius: 0.5rem;
+ overflow: hidden;
+}
+
+.examples-container p {
+ margin-bottom: 0.5rem;
+ font-weight: 500;
+}
+
+.examples-grid {
+ display: grid;
+ grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+ gap: 0.5rem;
+}
+
+.example-button {
+ padding: 0.7rem;
+ background-color: var(--card-bg);
+ border: 1px solid var(--border);
+ border-radius: 0.5rem;
+ font-family: monospace;
+ font-size: 0.9rem;
+ text-align: center;
+ transition: background-color 0.2s;
+}
+
+.input-group {
+ display: flex;
+ gap: 1rem;
+}
+
+.input-group textarea {
+ flex: 1;
+ padding: 1rem;
+ border-radius: 0.5rem;
+ border: 1px solid var(--border);
+ resize: vertical;
+ font-family: monospace;
+ font-size: 1rem;
+ background-color: var(--background);
+ color: var(--text);
+ min-height: 100px;
+}
+
+.submit-button {
+ display: flex;
+ align-items: center;
+ gap: 0.5rem;
+ padding: 0 1.5rem;
+ background-color: var(--primary);
+ color: white;
+ border: none;
+ border-radius: 0.5rem;
+ font-weight: 600;
+ font-size: 1rem;
+}
+
+.input-tip {
+ margin-top: 0.5rem;
+ color: var(--text-light);
+ font-size: 0.9rem;
+}
+
+/* Equation preview */
+.equation-preview {
+ background-color: var(--card-bg);
+ border-radius: 1rem;
+ padding: 1.5rem;
+ box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+ border: 1px solid var(--border);
+ position: relative;
+ overflow: hidden;
+}
+
+.preview-header {
+ margin-bottom: 1rem;
+}
+
+.preview-header h2 {
+ font-size: 1.2rem;
+ color: var(--text);
+}
+
+.preview-container {
+ display: flex;
+ flex-direction: column;
+ align-items: center;
+ position: relative;
+ min-height: 100px;
+}
+
+.equation-display {
+ width: 100%;
+ padding: 2rem;
+ background-color: var(--background);
+ border-radius: 0.5rem;
+ overflow-x: auto;
+ font-size: 1.2rem;
+ text-align: center;
+}
+
+.equation-evaluation {
+ margin-top: 1rem;
+ width: 100%;
+ text-align: center;
+ padding: 0.5rem;
+ background-color: var(--primary-dark);
+ color: white;
+ border-radius: 0.5rem;
+}
+
+.equation-evaluation span {
+ font-weight: 600;
+ font-family: monospace;
+}
+
+.confetti-container {
+ position: absolute;
+ width: 100%;
+ height: 100%;
+ pointer-events: none;
+ z-index: 10;
+}
+
+.confetti-dot {
+ position: absolute;
+ border-radius: 50%;
+ pointer-events: none;
+}
+
+/* Equation history */
+.equation-history {
+ background-color: var(--card-bg);
+ border-radius: 1rem;
+ padding: 1.5rem;
+ box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+ border: 1px solid var(--border);
+}
+
+.history-header {
+ display: flex;
+ align-items: center;
+ gap: 0.5rem;
+ margin-bottom: 1rem;
+ color: var(--primary);
+}
+
+.history-header h3 {
+ font-size: 1.1rem;
+}
+
+.history-list {
+ display: flex;
+ flex-direction: column;
+ gap: 0.5rem;
+}
+
+.history-item {
+ display: flex;
+ justify-content: space-between;
+ align-items: center;
+ padding: 0.7rem 1rem;
+ background-color: var(--background);
+ border-radius: 0.5rem;
+ cursor: pointer;
+ transition: background-color 0.2s;
+}
+
+.history-equation {
+ font-family: monospace;
+ font-size: 0.9rem;
+}
+
+.use-arrow {
+ opacity: 0.5;
+ transition: opacity 0.2s;
+}
+
+.history-item:hover .use-arrow {
+ opacity: 1;
+ color: var(--primary);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+ .input-group {
+   flex-direction: column;
+ }
+ 
+ .theme-selector {
+   flex-direction: column;
+   align-items: flex-start;
+ }
+ 
+ .theme-button span {
+   display: none;
+ }
+}
