@@ -79,5 +79,5 @@ npx serve -s dist
 Pull requests are welcome! If you’d like to contribute, please fork the repository and submit a PR.
 
 ## Author
-Created by [Your Name](https://github.com/DikshaKhandelwal).
+Created by [Diksha Khandelwal](https://github.com/DikshaKhandelwal).
 
