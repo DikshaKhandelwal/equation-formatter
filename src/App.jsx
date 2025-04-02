@@ -14,6 +14,24 @@ function App() {
   const [theme, setTheme] = useState('light')
   const [showConfetti, setShowConfetti] = useState(false)
   
+  const containerVariants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: { 
+      opacity: 1, 
+      y: 0,
+      transition: {
+        duration: 0.6,
+        ease: "easeOut",
+        staggerChildren: 0.2
+      }
+    }
+  }
+
+  const itemVariants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: { opacity: 1, y: 0 }
+  }
+
   const addToHistory = (eq) => {
     if (eq.trim() !== '' && !history.includes(eq)) {
       setHistory(prev => [eq, ...prev].slice(0, 10))
@@ -43,13 +61,16 @@ function App() {
     <div className={`app ${theme}`}>
       <motion.div 
         className="container"
-        initial={{ opacity: 0, y: -20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.5 }}
+        variants={containerVariants}
+        initial="hidden"
+        animate="visible"
       >
         <Header />
         
-        <main className="content">
+        <motion.main 
+          className="content"
+          variants={itemVariants}
+        >
           <div className="equation-tools">
             <div className="tools-row">
               <ThemeSelector currentTheme={theme} onThemeChange={handleThemeChange} />
@@ -62,18 +83,22 @@ function App() {
             />
           </div>
           
-          <EquationPreview 
-            equation={equation} 
-            showConfetti={showConfetti}
-          />
+          <motion.div variants={itemVariants}>
+            <EquationPreview 
+              equation={equation} 
+              showConfetti={showConfetti}
+            />
+          </motion.div>
           
           {history.length > 0 && (
-            <EquationHistory 
-              history={history} 
-              onSelect={setEquation}
-            />
+            <motion.div variants={itemVariants}>
+              <EquationHistory 
+                history={history} 
+                onSelect={setEquation}
+              />
+            </motion.div>
           )}
-        </main>
+        </motion.main>
       </motion.div>
     </div>
   )

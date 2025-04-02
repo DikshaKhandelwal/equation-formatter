@@ -9,7 +9,18 @@ export const evaluateEquation = (equation) => {
   try {
     // Remove LaTeX commands and formatting
     let processedEquation = equation
-      .replace(/\\sqrt\{([^{}]+)\}/g, 'sqrt($1)') // Convert \sqrt{x} to sqrt(x)
+      // Improved sqrt handling - preserve nested expressions
+      .replace(/\\sqrt\{([^{}]+)\}/g, (match, content) => {
+        // Handle nested braces
+        let depth = 0;
+        let nestedContent = '';
+        for (let char of content) {
+          if (char === '{') depth++;
+          else if (char === '}') depth--;
+          nestedContent += char;
+        }
+        return `sqrt(${nestedContent})`;
+      })
       .replace(/\\frac\{([^{}]+)\}\{([^{}]+)\}/g, '($1)/($2)') // Convert \frac{x}{y} to (x)/(y)
       .replace(/([a-zA-Z0-9])\^(\{[^{}]+\}|[a-zA-Z0-9])/g, '$1^$2') // Keep exponents
       .replace(/\\[a-zA-Z]+/g, '') // Remove other LaTeX commands

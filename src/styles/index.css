@@ -3,6 +3,7 @@
  --primary-dark: #2563eb;
  --accent: #f97316;
  --accent-light: #fdba74;
+ --accent-dark:#d44b07;
  --text: #1e293b;
  --text-light: #64748b;
  --background: #f8fafc;
@@ -29,6 +30,7 @@
  --primary-dark: #16a34a;
  --accent: #facc15;
  --accent-light: #fde68a;
+ --accent-dark:#d7ad05;
  --text: #1e293b;
  --text-light: #64748b;
  --background: #ecfdf5;
@@ -42,6 +44,7 @@
  --primary-dark: #ea580c;
  --accent: #8b5cf6;
  --accent-light: #c4b5fd;
+ --accent-dark: #603ced;
  --text: #1e293b;
  --text-light: #64748b;
  --background: #fff7ed;
