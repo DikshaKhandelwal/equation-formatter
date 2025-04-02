@@ -6,6 +6,7 @@ import EquationPreview from './components/EquationPreview'
 import ThemeSelector from './components/ThemeSelector'
 import EquationHistory from './components/EquationHistory'
 import LatexGuide from './components/LatexGuide'
+import Footer from './components/Footer'
 import './styles/App.css'
 
 function App() {
@@ -99,6 +100,8 @@ function App() {
             </motion.div>
           )}
         </motion.main>
+
+        <Footer />
       </motion.div>
     </div>
   )

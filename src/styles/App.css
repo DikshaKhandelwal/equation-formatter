@@ -734,6 +734,35 @@ code {
  background-color: var(--primary-dark);
 }
 
+/* Footer styles */
+.app-footer {
+  margin-top: 3rem;
+  padding: 1.5rem 0;
+  border-top: 1px solid var(--border);
+}
+
+.footer-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1.5rem;
+  color: var(--text-light);
+  font-size: 0.9rem;
+}
+
+.github-link {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--text-light);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.github-link:hover {
+  color: var(--primary);
+}
+
 /* Responsive adjustments */
 @media (max-width: 768px) {
  .container {
@@ -812,6 +841,12 @@ code {
  
  .equation-display {
    padding: 1.5rem 1rem;
+ }
+
+ .footer-content {
+   flex-direction: column;
+   gap: 1rem;
+   text-align: center;
  }
 }
 
